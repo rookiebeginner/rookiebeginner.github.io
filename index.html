@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script>
         // baidu
@@ -16,8 +16,8 @@
     <style>
         body { background: firebrick url(img/logo.png) center center no-repeat; cursor: pointer; }
         #weixin-tip{display:none; position:fixed;left:0;top:0;background:rgba(0,0,0,0.8);filter:alpha(opacity=80);width:100%;height:100%;z-index:100;}
-        #weixin-tip p{text-align:center;margin-top:10%;padding:0 5%;position:relative;}
-        #weixin-tip img{display:none;}
+        #weixin-tip p{text-align:right;margin-top:10%;position:relative;}
+        #weixin-tip img{display:none; width:80%;}
     </style>
     <title>小龙虾</title>
     <meta name="description" content="小龙虾以小龙虾为主材，配以辣椒、花椒和其他香辛料制成。成菜后，色泽红亮，口味辣并鲜香。" />
@@ -33,7 +33,7 @@
     </div>
     <script>
     var is_weixin = (function(){return window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == 'micromessenger'})();
-    var is_ios = (function(){return window.navigator.userAgent.toLowerCase().indexOf('iphone') !== -1})();
+    var is_ios = (function(){return window.navigator.userAgent.toLowerCase().match(/iphone/i) == 'iphone'})();
     window.onload = function() {
         var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
         var body = document.getElementById("body");
