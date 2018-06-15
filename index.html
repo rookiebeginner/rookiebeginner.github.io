@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script>
         // baidu
@@ -39,17 +39,17 @@
         var body = document.getElementById("body");
         var tip = document.getElementById('weixin-tip');
         var close = document.getElementById('close');
-        document.getElementById(is_ios?'ios':"android").style.display="inline";
-        body.style.height= (winHeight-100) + 'px';
-        body.onclick = function(e) {
-            if (is_weixin) {
+        if (is_weixin) {
+            document.getElementById(is_ios?'ios':"android").style.display="inline";
+            body.style.height= (winHeight-100) + 'px';
+            body.onclick = function(e) {
                 tip.style.height = winHeight + 'px'; //兼容IOS弹窗整屏
                 tip.style.display = 'block';
                 return false;
-            } else {
-                window.location.href = "http://www.spicespirit.com";
-                return false;
             }
+        } else {
+            window.location.href = "http://www.spicespirit.com";
+            return false;
         }
         tip.onclick = function(e) {
             e = e || window.event;
