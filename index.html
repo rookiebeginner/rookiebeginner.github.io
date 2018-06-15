@@ -2,6 +2,7 @@
 <html>
 <head>
     <script>
+    // baidu
     var _hmt = _hmt || [];
     (function() {
     var hm = document.createElement("script");
@@ -13,10 +14,21 @@
     <!--meta http-equiv="refresh" content="0; url=http://www.spicespirit.com" /-->
 </head>
 <body>
-
     <script>
-    window.location.href = "http://www.spicespirit.com" + '?v='+Math.random();
+    // agent test
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    if (isWeiXin()) {
+        document.write("<h1>请点击右上角使用浏览器打开。</h1>")
+    } else {
+        window.location.href = "http://www.spicespirit.com";
+    }
     </script>
-
 </body>
 </html>
