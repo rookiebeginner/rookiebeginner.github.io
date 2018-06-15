@@ -42,7 +42,7 @@
         document.getElementById(is_ios?'ios':"android").style.display="inline";
         body.style.height= (winHeight-100) + 'px';
         body.onclick = function(e) {
-            if (!is_weixin) {
+            if (is_weixin) {
                 tip.style.height = winHeight + 'px'; //兼容IOS弹窗整屏
                 tip.style.display = 'block';
                 return false;
