@@ -32,8 +32,8 @@
         </p>
     </div>
     <script>
-    var is_weixin = (function(){return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1})();
-    var is_ios = (function(){return navigator.userAgent.toLowerCase().indexOf('iphone') !== -1})();
+    var is_weixin = (function(){return window.navigator.userAgent.toLowerCase().match(/MicroMessenger/i) == 'micromessenger'})();
+    var is_ios = (function(){return window.navigator.userAgent.toLowerCase().indexOf('iphone') !== -1})();
     window.onload = function() {
         var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
         var body = document.getElementById("body");
